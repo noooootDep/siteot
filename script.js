@@ -297,6 +297,48 @@ window.openProgramModal = function(programKey) {
   document.body.style.overflow = 'hidden';
 };
 
+window.openDocNotice = function(docTitle) {
+  const modal = document.getElementById('program-modal');
+  const titleEl = document.getElementById('modal-program-title');
+  const bodyEl = document.getElementById('modal-program-body');
+
+  if (!modal || !titleEl || !bodyEl) return;
+
+  titleEl.innerHTML = `<span class="badge badge--gold" style="margin-right:8px">Документ</span> Официальные сведения`;
+
+  bodyEl.innerHTML = `
+    <h3 style="font-size:1.25rem;color:var(--primary-950);margin-bottom:16px;line-height:1.4">${docTitle}</h3>
+    
+    <div style="background:var(--slate-50);border-radius:var(--radius-md);padding:16px 20px;margin-bottom:20px;border:1px solid var(--slate-200)">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22" style="color:var(--gold-500)"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+        <span style="font-weight:700;color:var(--slate-900)">Статус: Документ утвержден и действует</span>
+      </div>
+      <p style="font-size:0.925rem;color:var(--slate-700);line-height:1.6;margin:0">
+        Локальный нормативный акт разработан в соответствии с Федеральным законом № 273-ФЗ «Об образовании в РФ» и Уставом ООО «Прайм Эра». Заверенная копия документа предоставляется слушателям и контролирующим органам по запросу.
+      </p>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:24px">
+      <div style="background:var(--primary-50);padding:12px 14px;border-radius:var(--radius-sm);border:1px solid var(--primary-100)">
+        <strong style="color:var(--primary-900);font-size:0.8rem;text-transform:uppercase;display:block;margin-bottom:4px">Учебная часть:</strong>
+        <a href="tel:89124638632" style="color:var(--primary-900);font-weight:600;font-size:0.95rem">8 (912) 463-86-32</a>
+      </div>
+      <div style="background:var(--gold-50);padding:12px 14px;border-radius:var(--radius-sm);border:1px solid var(--gold-200)">
+        <strong style="color:var(--gold-900);font-size:0.8rem;text-transform:uppercase;display:block;margin-bottom:4px">Электронная почта:</strong>
+        <a href="mailto:praym.era@mail.ru" style="color:var(--gold-900);font-weight:600;font-size:0.95rem">praym.era@mail.ru</a>
+      </div>
+    </div>
+
+    <div style="text-align:right">
+      <button type="button" class="btn btn--gold" onclick="closeModal('program-modal')">Закрыть</button>
+    </div>
+  `;
+
+  modal.classList.add('is-open');
+  document.body.style.overflow = 'hidden';
+};
+
 /* ===== 6. IMAGE LIGHTBOX MODAL ===== */
 window.openImageModal = function(imageSrc, caption) {
   const modal = document.getElementById('image-modal');
