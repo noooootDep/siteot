@@ -535,13 +535,16 @@ button, input, select, textarea {
   line-height: 1.18;
   margin-bottom: var(--space-lg);
   letter-spacing: -0.01em;
+  text-wrap: balance;
 }
 
 .hero__title span.gold-text {
   background: var(--gold-grad);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  display: inline-block;
+  display: inline;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
 }
 
 .hero__subtitle {

@@ -13,3 +13,7 @@ $RECYCLE.BIN/
 
 # Temp logs
 *.log
+
+# Raw screenshots folders
+данные/
+данные1/
