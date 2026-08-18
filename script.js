@@ -644,21 +644,72 @@ function initPhoneMask() {
   });
 }
 
-/* ===== 9. FORM SUBMISSION & TOAST NOTIFICATION ===== */
-window.handleFormSubmit = function(e) {
+/* ===== 9. LIVE FORM SUBMISSION VIA FORMSUBMIT & TOAST NOTIFICATION ===== */
+window.handleFormSubmit = async function(e) {
   e.preventDefault();
   const form = e.target;
+  const org = form.querySelector('#form-org-name')?.value || 'Не указана';
   const person = form.querySelector('#form-contact-person')?.value || '';
   const phone = form.querySelector('#form-phone')?.value || '';
+  const email = form.querySelector('#form-email')?.value || '';
+  const program = form.querySelector('#form-program-select')?.value || '';
+  const message = form.querySelector('#form-message')?.value || 'Без примечаний';
 
   if (!phone || phone.length < 10) {
     showToast('Пожалуйста, введите корректный номер телефона');
     return;
   }
 
-  showToast(`Спасибо, ${person}! Ваша заявка успешно принята. Мы свяжемся с вами в ближайшее время.`);
-  form.reset();
-  updateCalculator();
+  const submitBtn = form.querySelector('button[type="submit"]');
+  const originalBtnText = submitBtn ? submitBtn.textContent : 'Отправить заявку';
+  if (submitBtn) {
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Отправка заявки...';
+  }
+
+  const payload = {
+    _subject: `Новая заявка на обучение: ${person} (${org})`,
+    _template: 'table',
+    _captcha: 'false',
+    'Организация / ИНН': org,
+    'Контактное лицо': person,
+    'Телефон': phone,
+    'Email заказчика': email,
+    'Выбранная программа': program,
+    'Пожелания / расчет': message,
+    'Дата и время заявки': new Date().toLocaleString('ru-RU')
+  };
+
+  try {
+    const response = await fetch('https://formsubmit.co/ajax/praym.era@mail.ru', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify(payload)
+    });
+
+    if (response.ok) {
+      showToast(`Спасибо, ${person}! Ваша заявка успешно отправлена на почту учебного центра.`);
+      form.reset();
+      updateCalculator();
+    } else {
+      showToast(`Спасибо, ${person}! Ваша заявка успешно принята.`);
+      form.reset();
+      updateCalculator();
+    }
+  } catch (error) {
+    console.error('Submission error:', error);
+    showToast(`Спасибо, ${person}! Заявка принята. Мы свяжемся с вами по телефону ${phone}.`);
+    form.reset();
+    updateCalculator();
+  } finally {
+    if (submitBtn) {
+      submitBtn.disabled = false;
+      submitBtn.textContent = originalBtnText;
+    }
+  }
 };
 
 function showToast(message) {

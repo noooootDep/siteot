@@ -31,23 +31,17 @@
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
           8 (950) 172-26-13
         </a>
-        <a href="mailto:praym.era@mail.ru">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-          praym.era@mail.ru
-        </a>
-      </div>
-      <div class="top-bar__right">
-        <span class="top-bar__info-pill">п. Игра, ул. Загребина, 17</span>
+        <span class="top-bar__info-pill">УР, п. Игра, ул. Загребина, зд. 17, пом. 1</span>
         <span class="top-bar__info-pill">Пн–Пт: 8:00 – 17:00</span>
       </div>
     </div>
   </div>
 
   <!-- ===== HEADER ===== -->
-  <header class="header" id="header">
+  <header class="header">
     <div class="container">
-      <a href="index.html" class="header__logo" id="logo-link">
-        <img src="images/logo.png" alt="Логотип Учебный Центр Прайм Эра" class="header__logo-img">
+      <a href="index.html" class="header__logo">
+        <img src="images/logo.png" alt="Прайм Эра" class="header__logo-img">
         <div class="header__logo-titles">
           <span class="header__logo-brand">ПРАЙМ ЭРА</span>
           <span class="header__logo-sub">Учебный центр охраны труда</span>
@@ -55,86 +49,144 @@
       </a>
 
       <nav class="nav" id="main-nav">
-        <ul class="nav__list">
-          <li><a href="index.html" class="nav__link" id="nav-home">Главная</a></li>
-          <li><a href="svedeniya.html" class="nav__link nav__link--active" id="nav-svedeniya">Сведения об организации</a></li>
-          <li><a href="#education" class="nav__link svedeniya-tab-link" id="nav-programs">Программы</a></li>
-          <li><a href="#documents" class="nav__link svedeniya-tab-link" id="nav-docs">Документы</a></li>
-          <li><a href="#staff" class="nav__link svedeniya-tab-link" id="nav-staff-link">Преподаватели</a></li>
-          <li><a href="index.html#contacts" class="nav__link" id="nav-contacts">Контакты</a></li>
-        </ul>
-        <a href="index.html#callback" class="btn btn--gold btn--sm nav__cta-btn" id="nav-cta-btn">
-          Подать заявку
-        </a>
+        <div class="nav__list">
+          <a href="index.html" class="nav__link">Главная</a>
+          <a href="index.html#programs" class="nav__link">Программы и тарифы</a>
+          <a href="index.html#facilities" class="nav__link">Учебный класс</a>
+          <a href="index.html#team" class="nav__link">Преподаватели</a>
+          <a href="index.html#calculator" class="nav__link">Калькулятор</a>
+          <a href="svedeniya.html" class="nav__link nav__link--active">Сведения об организации</a>
+          <a href="index.html#contacts" class="nav__link">Контакты</a>
+        </div>
+        <a href="index.html#callback" class="btn btn--gold nav__cta-btn">Оставить заявку</a>
       </nav>
 
-      <button class="menu-toggle" id="menu-toggle" aria-label="Открыть мобильное меню">
+      <button class="menu-toggle" id="menu-toggle" aria-label="Открыть меню">
         <span></span>
         <span></span>
         <span></span>
       </button>
     </div>
   </header>
+
   <div class="overlay" id="overlay"></div>
 
-  <!-- ===== PAGE HERO ===== -->
-  <section class="page-hero">
+  <!-- ===== SVEDENIYA HERO ===== -->
+  <section class="svedeniya-hero">
     <div class="container">
-      <div class="page-hero__breadcrumbs">
-        <a href="index.html">Главная</a>
-        <span>&rarr;</span>
-        <span>Сведения об образовательной организации</span>
-      </div>
-      <h1 class="page-hero__title">Сведения об образовательной организации</h1>
-      <p class="page-hero__subtitle">
-        Информация размещена в соответствии со статьей 29 Федерального закона от 29.12.2012 № 273-ФЗ «Об образовании в РФ» и Приказом Рособрнадзора от 04.08.2023 № 1493
+      <div class="svedeniya-hero__badge">Официальный раздел</div>
+      <h1 class="svedeniya-hero__title">Сведения об образовательной организации</h1>
+      <p class="svedeniya-hero__subtitle">
+        Информация размещена в соответствии с требованиями Федерального закона от 29.12.2012 № 273-ФЗ «Об образовании в Российской Федерации» и Приказа Рособрнадзора от 04.08.2023 № 1493
       </p>
     </div>
   </section>
 
-  <!-- ===== SUBSECTION TABS NAVIGATION ===== -->
-  <nav class="svedeniya-nav" id="svedeniya-nav">
-    <div class="container">
-      <a href="#basic" class="svedeniya-nav__link svedeniya-nav__link--active" data-tab="basic" id="tab-basic">Основные сведения</a>
-      <a href="#structure" class="svedeniya-nav__link" data-tab="structure" id="tab-structure">Структура и органы управления</a>
-      <a href="#documents" class="svedeniya-nav__link" data-tab="documents" id="tab-documents">Документы</a>
-      <a href="#education" class="svedeniya-nav__link" data-tab="education" id="tab-education">Образование</a>
-      <a href="#standards" class="svedeniya-nav__link" data-tab="standards" id="tab-standards">Образовательные стандарты</a>
-      <a href="#management" class="svedeniya-nav__link" data-tab="management" id="tab-management">Руководство</a>
-      <a href="#staff" class="svedeniya-nav__link" data-tab="staff" id="tab-staff">Педагогический состав</a>
-      <a href="#facilities" class="svedeniya-nav__link" data-tab="facilities" id="tab-facilities">Мат.-тех. обеспечение и доступная среда</a>
-      <a href="#scholarships" class="svedeniya-nav__link" data-tab="scholarships" id="tab-scholarships">Стипендии и поддержка</a>
-      <a href="#paid" class="svedeniya-nav__link" data-tab="paid" id="tab-paid">Платные услуги</a>
-      <a href="#finance" class="svedeniya-nav__link" data-tab="finance" id="tab-finance">Финансовая деятельность</a>
-      <a href="#vacancies" class="svedeniya-nav__link" data-tab="vacancies" id="tab-vacancies">Вакантные места</a>
-      <a href="#international" class="svedeniya-nav__link" data-tab="international" id="tab-international">Международное сотрудничество</a>
-    </div>
-  </nav>
+  <!-- ===== MAIN CONTENT WITH SIDEBAR ===== -->
+  <div class="container svedeniya-layout">
+    
+    <!-- Sidebar Navigation -->
+    <aside class="svedeniya-sidebar">
+      <div class="svedeniya-nav">
+        <div class="svedeniya-nav__title">Разделы сведений</div>
+        <div class="svedeniya-nav__list" id="svedeniya-tabs">
+          <a href="#common" class="svedeniya-nav__item is-active" data-target="common">
+            <span class="svedeniya-nav__item-num">1</span>
+            <span>Основные сведения</span>
+          </a>
+          <a href="#structure" class="svedeniya-nav__item" data-target="structure">
+            <span class="svedeniya-nav__item-num">2</span>
+            <span>Структура и органы управления</span>
+          </a>
+          <a href="#documents" class="svedeniya-nav__item" data-target="documents">
+            <span class="svedeniya-nav__item-num">3</span>
+            <span>Документы</span>
+          </a>
+          <a href="#education" class="svedeniya-nav__item" data-target="education">
+            <span class="svedeniya-nav__item-num">4</span>
+            <span>Образование</span>
+          </a>
+          <a href="#standards" class="svedeniya-nav__item" data-target="standards">
+            <span class="svedeniya-nav__item-num">5</span>
+            <span>Образовательные стандарты</span>
+          </a>
+          <a href="#management" class="svedeniya-nav__item" data-target="management">
+            <span class="svedeniya-nav__item-num">6</span>
+            <span>Руководство</span>
+          </a>
+          <a href="#staff" class="svedeniya-nav__item" data-target="staff">
+            <span class="svedeniya-nav__item-num">7</span>
+            <span>Педагогический состав</span>
+          </a>
+          <a href="#facilities" class="svedeniya-nav__item" data-target="facilities">
+            <span class="svedeniya-nav__item-num">8</span>
+            <span>Мат.-тех. обеспечение и доступная среда</span>
+          </a>
+          <a href="#scholarships" class="svedeniya-nav__item" data-target="scholarships">
+            <span class="svedeniya-nav__item-num">9</span>
+            <span>Стипендии и меры поддержки</span>
+          </a>
+          <a href="#paid" class="svedeniya-nav__item" data-target="paid">
+            <span class="svedeniya-nav__item-num">10</span>
+            <span>Платные образовательные услуги</span>
+          </a>
+          <a href="#finance" class="svedeniya-nav__item" data-target="finance">
+            <span class="svedeniya-nav__item-num">11</span>
+            <span>Финансово-хозяйственная деятельность</span>
+          </a>
+          <a href="#vacancies" class="svedeniya-nav__item" data-target="vacancies">
+            <span class="svedeniya-nav__item-num">12</span>
+            <span>Вакантные места для приема</span>
+          </a>
+          <a href="#environment" class="svedeniya-nav__item" data-target="environment">
+            <span class="svedeniya-nav__item-num">13</span>
+            <span>Доступная среда</span>
+          </a>
+          <a href="#international" class="svedeniya-nav__item" data-target="international">
+            <span class="svedeniya-nav__item-num">14</span>
+            <span>Международное сотрудничество</span>
+          </a>
+          <a href="#catering" class="svedeniya-nav__item" data-target="catering">
+            <span class="svedeniya-nav__item-num">15</span>
+            <span>Организация питания</span>
+          </a>
+        </div>
+      </div>
+    </aside>
 
-  <!-- ===== SVEDENIYA CONTENT ===== -->
-  <main class="svedeniya-content" id="main-content">
-    <div class="container">
-
+    <!-- Main Content Panels -->
+    <main class="svedeniya-content">
+      
       <!-- ============================== -->
       <!-- 1. ОСНОВНЫЕ СВЕДЕНИЯ           -->
       <!-- ============================== -->
-      <div class="subsection subsection--active" id="basic" data-section="basic">
+      <div class="subsection is-active" id="common" data-section="common">
         <h2 class="subsection__title">Основные сведения</h2>
-
+        
         <div class="info-table-wrap">
           <table class="info-table">
+            <thead>
+              <tr>
+                <th style="width:35%">Параметр</th>
+                <th>Сведения</th>
+              </tr>
+            </thead>
             <tbody>
               <tr>
                 <td>Полное наименование организации</td>
                 <td>Общество с ограниченной ответственностью «Прайм Эра»</td>
               </tr>
               <tr>
-                <td>Краткое / фирменное наименование</td>
-                <td>ООО «Прайм Эра» (Учебный центр «Прайм Эра»)</td>
+                <td>Сокращенное наименование</td>
+                <td>ООО «Прайм Эра»</td>
               </tr>
               <tr>
-                <td>Учредитель</td>
-                <td>Максимов Кирилл Сергеевич</td>
+                <td>Дата создания организации</td>
+                <td>20 февраля 2026 года</td>
+              </tr>
+              <tr>
+                <td>Учредитель (участник)</td>
+                <td>Максимов Кирилл Сергеевич (100% доли уставного капитала)</td>
               </tr>
               <tr>
                 <td>Руководитель организации</td>
@@ -146,15 +198,15 @@
               </tr>
               <tr>
                 <td>Юридический адрес</td>
-                <td>427145, Удмуртская Республика, муниципальный округ Игринский район, поселок Игра, улица Загребина, здание 17, помещение 1</td>
+                <td>427145, УР, п. Игра, ул. Загребина, зд. 17, пом. 1</td>
               </tr>
               <tr>
                 <td>Фактический и почтовый адрес</td>
-                <td>427145, Удмуртская Республика, муниципальный округ Игринский район, поселок Игра, улица Загребина, здание 17, помещение 1</td>
+                <td>427145, УР, п. Игра, ул. Загребина, зд. 17, пом. 1</td>
               </tr>
               <tr>
                 <td>Места осуществления образовательной деятельности</td>
-                <td>427145, Удмуртская Республика, м.о. Игринский район, п. Игра, ул. Загребина, зд. 17, помещ. 1, а также с применением дистанционных образовательных технологий</td>
+                <td>427145, УР, п. Игра, ул. Загребина, зд. 17, пом. 1, а также с применением дистанционных образовательных технологий</td>
               </tr>
               <tr>
                 <td>Филиалы и представительства</td>
@@ -238,7 +290,7 @@
               <tr>
                 <td>Дирекция Учебного центра</td>
                 <td>Максимов Кирилл Сергеевич, Директор</td>
-                <td>п. Игра, ул. Загребина, зд. 17, помещ. 1</td>
+                <td>УР, п. Игра, ул. Загребина, зд. 17, пом. 1</td>
                 <td>8 (912) 463-86-32<br>tehtrud@ksmaksimov.ru</td>
               </tr>
               <tr>
@@ -528,6 +580,38 @@
             </dl>
           </div>
 
+          <div class="staff-card">
+            <div class="staff-card__avatar">ФА</div>
+            <div class="staff-card__name">Федоров Андрей Владимирович</div>
+            <div class="staff-card__position">Преподаватель-эксперт / Юрист по трудовому праву</div>
+            <dl class="staff-card__details">
+              <dt>Уровень образования:</dt>
+              <dd>Высшее профессиональное («Юриспруденция», квалификация «Юрист»)</dd>
+              <dt>Практический стаж в юриспруденции:</dt>
+              <dd>20 лет практического юридического опыта и правового регулирования трудовых отношений и охраны труда</dd>
+              <dt>Специализация:</dt>
+              <dd>Правовое обеспечение охраны труда, локальные нормативные акты, расследование несчастных случаев, ответственность работодателя</dd>
+              <dt>Преподаваемые дисциплины:</dt>
+              <dd>Трудовое законодательство РФ, нормативно-правовые требования охраны труда (программы 46А, 46Б), расследование и учет несчастных случаев</dd>
+            </dl>
+          </div>
+
+          <div class="staff-card">
+            <div class="staff-card__avatar">СА</div>
+            <div class="staff-card__name">Смердягин Алексей Александрович</div>
+            <div class="staff-card__position">Преподаватель ДПО / Эксперт по оценке профрисков</div>
+            <dl class="staff-card__details">
+              <dt>Уровень образования:</dt>
+              <dd>Высшее профессиональное («Математика», квалификация «Математик, преподаватель математики»)</dd>
+              <dt>Квалификация и профиль:</dt>
+              <dd>Преподаватель программ ДПО, специалист по количественным и статистическим методам оценки профессиональных рисков</dd>
+              <dt>Специализация:</dt>
+              <dd>Математическое моделирование рисков, статистический анализ производственного травматизма, информационные системы в охране труда</dd>
+              <dt>Преподаваемые дисциплины:</dt>
+              <dd>Методики идентификации опасностей и количественной оценки профессиональных рисков в СУОТ, статистика производственной безопасности</dd>
+            </dl>
+          </div>
+
         </div>
       </div>
 
@@ -548,7 +632,7 @@
             <tbody>
               <tr>
                 <td>Учебный кабинет</td>
-                <td>Оборудованный учебный класс на 2 этаже здания по адресу: 427145, УР, п. Игра, ул. Загребина, зд. 17, помещ. 1. Светлые просторные помещения с эргономичной мебелью и системой кондиционирования воздуха.</td>
+                <td>Оборудованный учебный класс на 2 этаже здания по адресу: 427145, УР, п. Игра, ул. Загребина, зд. 17, пом. 1. Светлые просторные помещения с эргономичной мебелью и системой кондиционирования воздуха.</td>
               </tr>
               <tr>
                 <td>Компьютерное оборудование</td>
@@ -778,7 +862,7 @@
           <div class="footer__org-details">
             <strong>ООО «Прайм Эра»</strong><br>
             ИНН: 1800054127 | ОГРН: 1261800008910<br>
-            427145, Удмуртская Республика, п. Игра, ул. Загребина, 17
+            427145, УР, п. Игра, ул. Загребина, зд. 17, пом. 1
           </div>
         </div>
 
