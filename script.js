@@ -450,13 +450,17 @@ window.setCalcCategory = function(cat) {
   
   if (tabSpec && tabWork) {
     if (cat === 'specialists') {
+      tabSpec.className = 'calc-tab-btn is-active';
       tabSpec.style.background = 'var(--primary-900)';
       tabSpec.style.color = 'var(--white)';
+      tabWork.className = 'calc-tab-btn';
       tabWork.style.background = 'transparent';
       tabWork.style.color = 'var(--slate-700)';
     } else {
+      tabWork.className = 'calc-tab-btn is-active';
       tabWork.style.background = 'var(--gold-500)';
       tabWork.style.color = 'var(--slate-950)';
+      tabSpec.className = 'calc-tab-btn';
       tabSpec.style.background = 'transparent';
       tabSpec.style.color = 'var(--slate-700)';
     }
@@ -474,9 +478,9 @@ function renderCalcPrograms() {
     <label class="calc-program-choice ${p.checked ? 'is-active' : ''}" id="choice-${p.id}">
       <div class="calc-choice-left">
         <input type="checkbox" class="calc-checkbox" id="${p.id}" value="${p.price}" data-name="${p.name}" ${p.checked ? 'checked' : ''} onchange="onCalcProgChange(this)">
-        <div>
+        <div class="calc-choice-info">
           <div class="calc-choice-title">${p.name}</div>
-          <div style="font-size:0.75rem;color:var(--slate-500)">Внесение в ЕИСОТ Минтруда РФ</div>
+          <div class="calc-choice-sub">Внесение в ЕИСОТ Минтруда РФ</div>
         </div>
       </div>
       <div class="calc-choice-price">${p.price.toLocaleString('ru-RU')} ₽</div>

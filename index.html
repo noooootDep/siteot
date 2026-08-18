@@ -759,9 +759,9 @@
         <div class="calc-controls">
           
           <!-- Audience Category Tabs -->
-          <div style="display:flex;gap:8px;margin-bottom:var(--space-lg);background:var(--slate-200);padding:4px;border-radius:var(--radius-md)">
-            <button type="button" class="btn btn--sm" id="calc-tab-specialists" style="flex:1;background:var(--primary-900);color:var(--white)" onclick="setCalcCategory('specialists')">Специалисты и руководители</button>
-            <button type="button" class="btn btn--sm" id="calc-tab-workers" style="flex:1;background:transparent;color:var(--slate-700)" onclick="setCalcCategory('workers')">Рабочие профессии (500 ₽)</button>
+          <div class="calc-tabs-wrap">
+            <button type="button" class="calc-tab-btn is-active" id="calc-tab-specialists" onclick="setCalcCategory('specialists')">Специалисты и руководители</button>
+            <button type="button" class="calc-tab-btn" id="calc-tab-workers" onclick="setCalcCategory('workers')">Рабочие профессии (500 ₽)</button>
           </div>
 
           <h3 style="font-size:1.15rem;margin-bottom:var(--space-md);color:var(--slate-900)">Выберите программы обучения:</h3>
