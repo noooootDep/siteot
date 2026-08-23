@@ -736,3 +736,49 @@ function showToast(message) {
     setTimeout(() => toast.remove(), 300);
   }, 4500);
 }
+
+/* ===== 10. SVEDENIYA SIDEBAR NAVIGATION & SCROLLSPY ===== */
+document.addEventListener('DOMContentLoaded', () => {
+  const svedeniyaNav = document.getElementById('svedeniya-tabs');
+  if (!svedeniyaNav) return;
+
+  const navItems = svedeniyaNav.querySelectorAll('.svedeniya-nav__item');
+  const sections = document.querySelectorAll('.svedeniya-content .subsection');
+
+  // Smooth scroll on click
+  navItems.forEach(item => {
+    item.addEventListener('click', (e) => {
+      e.preventDefault();
+      const targetId = item.getAttribute('data-target');
+      const targetSection = document.getElementById(targetId);
+      if (targetSection) {
+        targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        navItems.forEach(nav => nav.classList.remove('is-active'));
+        item.classList.add('is-active');
+      }
+    });
+  });
+
+  // Scrollspy to highlight active section as user scrolls
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const sectionId = entry.target.getAttribute('id');
+          navItems.forEach(item => {
+            if (item.getAttribute('data-target') === sectionId) {
+              item.classList.add('is-active');
+            } else {
+              item.classList.remove('is-active');
+            }
+          });
+        }
+      });
+    }, {
+      rootMargin: '-20% 0px -70% 0px',
+      threshold: 0
+    });
+
+    sections.forEach(section => observer.observe(section));
+  }
+});
