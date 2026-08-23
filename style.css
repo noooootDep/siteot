@@ -366,6 +366,7 @@ button, input, select, textarea {
   align-items: center;
   gap: 0.9rem;
   text-decoration: none;
+  flex-shrink: 0;
 }
 
 .header__logo-img {
@@ -376,6 +377,7 @@ button, input, select, textarea {
   border: 2px solid var(--gold-400);
   box-shadow: 0 0 15px rgba(212, 155, 37, 0.3);
   transition: transform var(--transition-base);
+  flex-shrink: 0;
 }
 
 .header__logo:hover .header__logo-img {
@@ -395,12 +397,14 @@ button, input, select, textarea {
   background: var(--gold-grad);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  white-space: nowrap;
 }
 
 .header__logo-sub {
   font-size: 0.775rem;
   color: var(--slate-400);
   font-weight: 500;
+  white-space: nowrap;
 }
 
 /* Navigation */
@@ -2168,9 +2172,13 @@ button, input, select, textarea {
   }
 }
 
-@media (max-width: 1180px) {
+@media (max-width: 1240px) {
   :root {
     --header-height: 74px;
+  }
+
+  .header__logo-brand {
+    font-size: 1.2rem;
   }
 
   .nav {
@@ -2222,6 +2230,17 @@ button, input, select, textarea {
 
   .menu-toggle {
     display: flex;
+  }
+}
+
+@media (max-width: 1024px) {
+  .top-bar__right {
+    display: none;
+  }
+  .top-bar__left {
+    width: 100%;
+    justify-content: center;
+    gap: var(--space-md);
   }
 }
 
